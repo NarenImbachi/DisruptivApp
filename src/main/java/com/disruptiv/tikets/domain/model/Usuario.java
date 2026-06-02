@@ -14,12 +14,12 @@ public class Usuario {
     private String nombre;
     private String email;
 
-    public static Usuario crear(Long id, String nombre, String email) {
+    public static Usuario crear( String nombre, String email) {
 
         validarNombre(nombre);
         validarEmail(email);
 
-        return new Usuario(id, nombre, email);
+        return new Usuario(null, nombre, email);
     }
 
     private static void validarNombre(String nombre) {

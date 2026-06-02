@@ -9,7 +9,6 @@ import com.disruptiv.tikets.infra.out.entidades.TiktekEntity;
 @Mapper(componentModel = "spring")
 public interface ITitekEntityMapper {
 
-    @Mapping(target = "id", ignore = true)
     @Mapping(target = "usuarioAsig", source = "usuarioAsig")
     TiktekEntity toEntity(Tiket tiket);
 

@@ -19,6 +19,13 @@ public class UsuarioAdapter implements IUsuarioOutputPort {
     private final IUsuarioEntityMapper mapper;
 
     @Override
+    public Usuario guardar(Usuario usuario) {
+        var entity = mapper.toEntity(usuario);
+        var savedEntity = usuarioRepo.save(entity);
+        return mapper.toDomain(savedEntity);
+    }
+
+    @Override
     public Optional<Usuario> buscarPorId(Long id) {
         return usuarioRepo.findById(id).map(mapper::toDomain);
     }
