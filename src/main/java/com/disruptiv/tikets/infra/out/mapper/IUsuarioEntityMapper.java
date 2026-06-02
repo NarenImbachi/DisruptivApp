@@ -8,10 +8,10 @@ import com.disruptiv.tikets.infra.out.entidades.UsuarioEntity;
 
 @Mapper(componentModel = "spring",
         unmappedTargetPolicy = ReportingPolicy.IGNORE)
-public interface UsuarioEntityMapper {
+public interface IUsuarioEntityMapper {
     
-    UsuarioEntity toUsuarioEntity(Usuario usuario);
-    Usuario toUsuario(UsuarioEntity usuarioEntity);
+    UsuarioEntity toEntity(Usuario usuario);
+    Usuario toDomain(UsuarioEntity usuarioEntity);
     
 
 }
